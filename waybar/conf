@@ -1,8 +1,19 @@
 {
 	"layer": "top",
 	"position": "top",
+    "height": 24,
 
-	"modules-left": [],
+	"modules-left": ["hyprland/workspaces"],
 	"modules-center": ["clock"],
-	"modules-right": [],
+	"modules-right": ["battery","cpu","memory"],
+
+    "battery":{
+        "bat": "BAT0",
+        "states": {
+           "warning": 30,
+           "critical": 15,
+        },
+        "format": "{capacity}% {icon}",
+        //"format-icons": {"","",""},
+    },
 }
