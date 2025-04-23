@@ -12,3 +12,10 @@ vim.opt.expandtab   = true
 vim.opt.spelllang = {en_en, de_de}
 vim.opt.spell = true
 
+-- leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+require("config.lazy")
+
+

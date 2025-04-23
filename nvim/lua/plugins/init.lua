@@ -1,10 +1,5 @@
 return {
-    {
-        "nvim-telescope/telescope.nvim",
-        dependencies = {"nvim-lua/plenary.nvim"},
-    },
-
-    {"williamboman/mason.nvim"},
+   {"williamboman/mason.nvim"},
 
     {"vonHeikemen/lsp-zero.nvim"},
     {"neovim/nvim-lspconfig"},   

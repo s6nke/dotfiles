@@ -1,3 +1,6 @@
 [submodule "polybar/scripts"]
 	path = polybar/scripts
 	url = https://github.com/polybar/polybar-scripts.git
+[submodule "bumblebee-status"]
+	path = bumblebee-status
+	url = https://github.com/tobi-wan-kenobi/bumblebee-status

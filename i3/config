@@ -50,7 +50,6 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -136,6 +135,19 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+bindsym $mod+KP_End workspace number $ws1
+bindsym $mod+KP_Down workspace number $ws2
+bindsym $mod+KP_Next workspace number $ws3
+bindsym $mod+KP_Left workspace number $ws4
+bindsym $mod+KP_Begin workspace number $ws5
+bindsym $mod+KP_Right workspace number $ws6
+bindsym $mod+KP_Home workspace number $ws7
+bindsym $mod+KP_Up workspace number $ws8
+bindsym $mod+KP_Prior workspace number $ws9
+bindsym $mod+KP_Insert workspace number $ws10
+
+
+
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -148,6 +160,16 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+KP_End move container to workspace number $ws1
+bindsym $mod+Shift+KP_Down move container to workspace number $ws2
+bindsym $mod+Shift+KP_Next move container to workspace number $ws3
+bindsym $mod+Shift+KP_Left move container to workspace number $ws4
+bindsym $mod+Shift+KP_Begin move container to workspace number $ws5
+bindsym $mod+Shift+KP_Right move container to workspace number $ws6
+bindsym $mod+Shift+KP_Home move container to workspace number $ws7
+bindsym $mod+Shift+KP_Up move container to workspace number $ws8
+bindsym $mod+Shift+KP_Prior move container to workspace number $ws9
+bindsym $mod+Shift+KP_Insert move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -184,7 +206,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Launch polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#Launch BumbleBeeStatus
+bar {
+    position top
+    font pango:Ubuntu Nerd Font
+    status_command /home/sba/dotfiles/bumblebee-status/bumblebee-status \
+        -m pasink pasource cpu memory battery datetime \
+        -p datetime.format="%a %e %b %Y %H:%M" memory.format="{percent:05.02f}%"\
+        -t moonlight-powerline
+}
 
 
 # gaps
@@ -194,4 +225,10 @@ gaps outer 5
 
 # lock screen
 bindsym $mod+x exec "i3lock -c 000000 && xset dpms force off" 
-exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
+exec "xautolock -detectsleep -time 10 -locker \"i3lock -c 000000 && xset dpms force off\""
+
+# Set wallpaper
+exec_always --no-startup-id feh --bg-scale '/home/sba/Pictures/wallpaper-sea.jpg'
+
+# Transparency
+exec_always --no-startup-id picom -CGb
